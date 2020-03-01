@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.codeseeker.microUserService.ui.Entities.UserEntity;;
 
 @Repository
-public interface DaoLayer extends JpaRepository<UserEntity, Long> 
-{
-
+public interface DaoLayer extends JpaRepository<UserEntity, String> {
+	UserEntity findByEmail(String username);
 }

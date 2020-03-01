@@ -21,21 +21,21 @@ public class UserEntity implements Serializable {
 	@Id
 	@GeneratedValue(generator = "userid")
 	@GenericGenerator(name = "userid", strategy = "com.codeseeker.microUserService.internals.idgenerator.GenericUserIDGenerator")
-	private int userid;
+	private String userid;
 	@Column(nullable = false, length = 50)
 	private String firstname;
 	@Column(nullable = false, length = 50)
 	private String lastname;
 	@Column(nullable = false, length = 100, unique = true)
 	private String email;
-	@Column(nullable = false, length = 50)
+	@Column(nullable = false, length = 500)
 	private String encryptedpassword;
 
-	public int getUserid() {
+	public String getUserid() {
 		return userid;
 	}
 
-	public void setUserid(int userid) {
+	public void setUserid(String userid) {
 		this.userid = userid;
 	}
 

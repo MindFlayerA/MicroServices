@@ -12,7 +12,7 @@ public class GenericUserIDGenerator implements IdentifierGenerator{
 	private static final String USER_PREFIX="US";
 	@Override
 	public Serializable generate(SharedSessionContractImplementor session, Object object) throws HibernateException {
-		Long id=Long.valueOf(USER_PREFIX + String.valueOf(UUID.randomUUID().toString()).substring(0, 4));
+		String id=USER_PREFIX+UUID.randomUUID().toString().substring(0, 4).toUpperCase();
 		return id;
 	}
 
